@@ -1,0 +1,18 @@
+Hero = {}
+local mt = {__index = Hero}      
+ 
+-- Note the use of '.'
+function Hero.new(px, py)
+	local new_instance = {}
+	new_instance.x = px
+	new_instance.y = py
+	return setmetatable(new_instance,mt)
+end
+ 
+-- Note the use of ':'
+function Hero:MoveTo(px,py)
+	self.x = px
+	self.y = py
+end
+ 
+return Hero
